@@ -1,7 +1,7 @@
 {
-  "name": "@glint/environment-glimmerx",
-  "version": "1.2.1",
-  "repository": "typed-ember/glint",
+  "name": "@norith/glint-environment-glimmerx",
+  "version": "1.0.0",
+  "repository": "https://github.com/snorith/glint",
   "description": "A Glint environment to support GlimmerX projects",
   "license": "MIT",
   "author": "Dan Freeman (https://github.com/dfreeman)",
@@ -30,7 +30,7 @@
     "component/**/*.{js,d.ts}"
   ],
   "peerDependencies": {
-    "@glint/template": "^1.2.1",
+    "@norith/glint-template": "1.0.0",
     "@glimmerx/component": "^0.6.7",
     "@glimmerx/modifier": "^0.6.7",
     "@glimmerx/helper": "^0.6.7"
@@ -53,6 +53,7 @@
     "expect-type": "^0.15.0"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   }
 }

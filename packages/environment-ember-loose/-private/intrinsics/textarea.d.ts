@@ -1,4 +1,4 @@
-import { ComponentLike } from '@glint/template';
+import { ComponentLike } from '@norith/glint-template';
 
 export interface TextareaArgs {
   value?: string | null | undefined;

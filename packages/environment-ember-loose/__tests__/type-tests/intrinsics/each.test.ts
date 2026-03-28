@@ -4,7 +4,7 @@ import {
   resolve,
   emitComponent,
   NamedArgsMarker,
-} from '@glint/environment-ember-loose/-private/dsl';
+} from '@norith/glint-environment-ember-loose/-private/dsl';
 import ArrayProxy from '@ember/array/proxy';
 
 let each = resolve(Globals['each']);

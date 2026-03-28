@@ -1,6 +1,8 @@
 {
   "name": "glint",
-  "repository": "https://github.com/typed-ember/glint",
+  "version": "1.0.0",
+  "description": "TypeScript-powered template type checking for Glimmer (maintained fork)",
+  "repository": "https://github.com/snorith/glint",
   "private": true,
   "workspaces": [
     "packages/*",
@@ -35,7 +37,10 @@
   },
   "resolutions": {
     "@types/yargs": "17.0.13",
+    "@types/node": "18.19.0",
+    "@types/glob": "7.2.0",
+    "minipass": "5.0.0",
     "ember-cli-htmlbars": "^6.0.1"
   },
-  "version": "1.2.1"
+  "version": "1.0.0"
 }

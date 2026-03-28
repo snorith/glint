@@ -1,5 +1,5 @@
 import { expectTypeOf } from 'expect-type';
-import { Globals, resolve } from '@glint/environment-ember-loose/-private/dsl';
+import { Globals, resolve } from '@norith/glint-environment-ember-loose/-private/dsl';
 
 let fn = resolve(Globals['fn']);
 

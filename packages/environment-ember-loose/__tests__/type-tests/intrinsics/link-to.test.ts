@@ -4,7 +4,7 @@ import {
   applySplattributes,
   emitComponent,
   NamedArgsMarker,
-} from '@glint/environment-ember-loose/-private/dsl';
+} from '@norith/glint-environment-ember-loose/-private/dsl';
 import { expectTypeOf } from 'expect-type';
 
 let linkTo = resolve(Globals['link-to']);

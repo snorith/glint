@@ -1,4 +1,4 @@
-import { HelperLike } from '@glint/template';
+import { HelperLike } from '@norith/glint-template';
 
 export type LogHelper = HelperLike<{
   Args: { Positional: unknown[] };

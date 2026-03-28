@@ -4,9 +4,9 @@ import {
   resolve,
   emitComponent,
   NamedArgsMarker,
-} from '@glint/environment-ember-loose/-private/dsl';
+} from '@norith/glint-environment-ember-loose/-private/dsl';
 import { expectTypeOf } from 'expect-type';
-import { ComponentLike, WithBoundArgs } from '@glint/template';
+import { ComponentLike, WithBoundArgs } from '@norith/glint-template';
 
 {
   const NoArgsComponent = templateOnlyComponent();

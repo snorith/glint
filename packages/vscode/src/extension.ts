@@ -13,7 +13,7 @@ import {
   WorkspaceConfiguration,
 } from 'vscode';
 import { Disposable, LanguageClient, ServerOptions } from 'vscode-languageclient/node.js';
-import type { Request, GetIRRequest } from '@glint/core/lsp-messages';
+import type { Request, GetIRRequest } from '@norith/glint-core/lsp-messages';
 
 ///////////////////////////////////////////////////////////////////////////////
 // Setup and extension lifecycle
@@ -159,7 +159,7 @@ function findLanguageServer(workspaceDir: string): string | null {
   let resolutionDir = path.resolve(workspaceDir, userLibraryPath);
   let require = createRequire(path.join(resolutionDir, 'package.json'));
   try {
-    return require.resolve('@glint/core/bin/glint-language-server');
+    return require.resolve('@norith/glint-core/bin/glint-language-server');
   } catch {
     // Many workspaces with `tsconfig` files won't be Glint projects, so it's totally fine for us to
     // just bail out if we don't see `@glint/core`. If someone IS expecting Glint to run for this

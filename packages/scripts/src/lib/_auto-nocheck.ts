@@ -5,7 +5,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import globPkg from 'glob';
 import yargs from 'yargs';
 import ora from 'ora';
-import { type ProjectAnalysis } from '@glint/core';
+import { type ProjectAnalysis } from '@norith/glint-core';
 
 const globSync = globPkg.sync;
 
@@ -65,7 +65,7 @@ function parseArgs(args: Array<string>): { globs: Array<string>; explanation: st
     .parseSync();
 }
 
-type GlintCore = typeof import('@glint/core');
+type GlintCore = typeof import('@norith/glint-core');
 
 function findImport(path: string, basedir: string): string {
   let resolvedPath = createRequire(`${basedir}/package.json`).resolve(path);
@@ -78,7 +78,7 @@ function findImport(path: string, basedir: string): string {
 async function loadGlintCore(cwd: string): Promise<GlintCore> {
   let glint: GlintCore | undefined;
   try {
-    glint = await import(findImport('@glint/core', cwd));
+    glint = await import(findImport('@norith/glint-core', cwd));
   } catch (error) {
     console.log(error);
     // Fall through

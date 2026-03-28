@@ -4,7 +4,7 @@ import {
   Globals,
   NamedArgsMarker,
   resolve,
-} from '@glint/environment-ember-loose/-private/dsl';
+} from '@norith/glint-environment-ember-loose/-private/dsl';
 
 let eachIn = resolve(Globals['each-in']);
 

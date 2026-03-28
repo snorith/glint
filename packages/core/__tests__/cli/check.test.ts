@@ -81,7 +81,7 @@ describe('CLI: single-pass typechecking', () => {
       export default class OtherComponent extends Component<{ Args: OtherComponentArgs }> { }
 
 
-      declare module '@glint/environment-ember-loose/registry' {
+      declare module '@norith/glint-environment-ember-loose/registry' {
         export default interface Registry {
           OtherComponent: typeof OtherComponent;
         }

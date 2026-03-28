@@ -1,4 +1,4 @@
-import { typeTest } from '@glint/type-test';
+import { typeTest } from '@norith/glint-type-test';
 import { hbs } from 'ember-cli-htmlbars';
 
 let context = {

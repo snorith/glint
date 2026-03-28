@@ -1,7 +1,7 @@
 import { module, test } from 'qunit';
 import { render } from '@ember/test-helpers';
 import { setupRenderingTest } from 'ember-qunit';
-import { ComponentLike, HelperLike, ModifierLike } from '@glint/template';
+import { ComponentLike, HelperLike, ModifierLike } from '@norith/glint-template';
 import { hbs } from 'ember-cli-htmlbars';
 
 module('Integration | Types | empty object signature members', function (hooks) {

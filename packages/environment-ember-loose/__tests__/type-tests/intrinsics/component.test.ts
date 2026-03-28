@@ -1,7 +1,7 @@
 import Component from '@ember/component';
 import { hbs } from 'ember-cli-htmlbars';
-import { typeTest } from '@glint/type-test';
-import { WithBoundArgs, ModifierLike } from '@glint/template';
+import { typeTest } from '@norith/glint-type-test';
+import { WithBoundArgs, ModifierLike } from '@norith/glint-template';
 
 // String-based lookups
 typeTest(

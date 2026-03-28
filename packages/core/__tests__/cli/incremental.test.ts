@@ -13,7 +13,7 @@ describe('CLI: --incremental', () => {
     let project = await Project.create({ glint: { environment: 'ember-template-imports' } });
 
     let code = stripIndent`
-      import '@glint/environment-ember-template-imports';
+      import '@norith/glint-environment-ember-template-imports';
       import Component from '@glimmer/component';
 
       type ApplicationArgs = {
@@ -51,7 +51,7 @@ describe('CLI: --incremental', () => {
       project = await Project.create({ glint: { environment: 'ember-template-imports' } });
 
       let code = stripIndent`
-        import '@glint/environment-ember-template-imports';
+        import '@norith/glint-environment-ember-template-imports';
         import Component from '@glimmer/component';
 
         type ApplicationArgs = {
@@ -92,7 +92,7 @@ describe('CLI: --incremental', () => {
       let firstStat = statSync(project.filePath(BUILD_INFO));
 
       let code = stripIndent`
-        import '@glint/environment-ember-template-imports';
+        import '@norith/glint-environment-ember-template-imports';
         import Component from '@glimmer/component';
 
         type ApplicationArgs = {
@@ -130,7 +130,7 @@ describe('CLI: --incremental', () => {
       project = await Project.create({ compilerOptions: { incremental: true } });
 
       let code = stripIndent`
-        import '@glint/environment-ember-template-imports';
+        import '@norith/glint-environment-ember-template-imports';
         import Component from '@glimmer/component';
   
         type ApplicationArgs = {

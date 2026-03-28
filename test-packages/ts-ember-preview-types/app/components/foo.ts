@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import { ComponentLike } from '@glint/template';
+import { ComponentLike } from '@norith/glint-template';
 
 export default class Foo extends Component {
   name = 'FOO';
@@ -9,7 +9,7 @@ export default class Foo extends Component {
   MaybeComponent?: ComponentLike<{ Args: { arg: string } }>;
 }
 
-declare module '@glint/environment-ember-loose/registry' {
+declare module '@norith/glint-environment-ember-loose/registry' {
   export default interface Registry {
     Foo: typeof Foo;
   }

@@ -1,4 +1,4 @@
-import { ModifierLike } from '@glint/template';
+import { ModifierLike } from '@norith/glint-template';
 
 export interface OnModifierArgs {
   capture?: boolean;

@@ -1,5 +1,5 @@
 /* eslint-disable ember/no-classic-components, ember/require-tagless-components */
-import { ComponentLike, WithBoundArgs } from '@glint/template';
+import { ComponentLike, WithBoundArgs } from '@norith/glint-template';
 import Component from '@ember/component';
 import EmberComponent from './ember-component';
 
@@ -21,7 +21,7 @@ interface WrapperComponentSignature {
 
 export default class WrapperComponent extends Component<WrapperComponentSignature> {}
 
-declare module '@glint/environment-ember-loose/registry' {
+declare module '@norith/glint-environment-ember-loose/registry' {
   export default interface Registry {
     WrapperComponent: typeof WrapperComponent;
   }

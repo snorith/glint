@@ -1,4 +1,4 @@
-import { GlintEnvironmentConfig, GlintSpecialFormConfig } from '@glint/core/config-types';
+import { GlintEnvironmentConfig, GlintSpecialFormConfig } from '@norith/glint-core/config-types';
 import { preprocess } from './preprocess';
 import { transform } from './transform';
 
@@ -18,9 +18,9 @@ export default function emberTemplateImportsEnvironment(
 
   return {
     tags: {
-      '@glint/environment-ember-template-imports/-private/tag': {
+      '@norith/glint-environment-ember-template-imports/-private/tag': {
         hbs: {
-          typesModule: '@glint/environment-ember-template-imports/-private/dsl',
+          typesModule: '@norith/glint-environment-ember-template-imports/-private/dsl',
           specialForms: {
             globals: {
               if: 'if',

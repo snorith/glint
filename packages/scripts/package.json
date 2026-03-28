@@ -1,8 +1,8 @@
 {
-  "name": "@glint/scripts",
-  "version": "1.2.1",
+  "name": "@norith/glint-scripts",
+  "version": "1.0.0",
   "type": "module",
-  "repository": "typed-ember/glint",
+  "repository": "https://github.com/snorith/glint",
   "description": "Scripts for working with Glint",
   "license": "MIT",
   "authors": [
@@ -39,6 +39,7 @@
     "vitest": "^0.22.0"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   }
 }

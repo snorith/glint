@@ -1,12 +1,12 @@
 // This module is responsible for augmenting the upstream definitions of entities that interact
 // with templates to include the information necessary for Glint to typecheck them.
-import { ComponentLike, HelperLike, ModifierLike } from '@glint/template';
+import { ComponentLike, HelperLike, ModifierLike } from '@norith/glint-template';
 import {
   Context,
   DirectInvokable,
   FlattenBlockParams,
   TemplateContext,
-} from '@glint/template/-private/integration';
+} from '@norith/glint-template/-private/integration';
 
 //////////////////////////////////////////////////////////////////////
 // Components
@@ -92,7 +92,7 @@ import {
   ComponentSignatureArgs,
   ComponentSignatureBlocks,
   ComponentSignatureElement,
-} from '@glint/template/-private/signature';
+} from '@norith/glint-template/-private/signature';
 
 export interface OnModifierArgs {
   capture?: boolean;

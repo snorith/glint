@@ -1,8 +1,8 @@
-import { emitContent, NamedArgsMarker, resolve } from '@glint/environment-glimmerx/-private/dsl';
+import { emitContent, NamedArgsMarker, resolve } from '@norith/glint-environment-glimmerx/-private/dsl';
 import { helper, fn as fnDefinition } from '@glimmerx/helper';
-import { NamedArgs } from '@glint/template/-private/integration';
+import { NamedArgs } from '@norith/glint-template/-private/integration';
 import { expectTypeOf } from 'expect-type';
-import '@glint/environment-glimmerx';
+import '@norith/glint-environment-glimmerx';
 
 // Built-in helper: `fn`
 {

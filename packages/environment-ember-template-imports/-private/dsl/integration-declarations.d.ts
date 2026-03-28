@@ -1,4 +1,4 @@
-import { Globals } from '@glint/environment-ember-loose/-private/dsl';
+import { Globals } from '@norith/glint-environment-ember-loose/-private/dsl';
 
 import '@ember/modifier';
 type EELOn = typeof Globals.on;

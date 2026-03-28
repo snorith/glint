@@ -169,7 +169,7 @@ describe('CLI: watched typechecking', () => {
 
   test('reports on errors introduced and cleared in a companion template', async () => {
     project.setGlintConfig({ environment: 'ember-loose' });
-    project.write('index.ts', 'import "@glint/environment-ember-loose/types";');
+    project.write('index.ts', 'import "@norith/glint-environment-ember-loose/types";');
 
     let script = stripIndent`
       import Component from '@ember/component';

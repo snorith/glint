@@ -5,7 +5,7 @@ import {
   Globals,
   NamedArgsMarker,
   resolve,
-} from '@glint/environment-ember-loose/-private/dsl';
+} from '@norith/glint-environment-ember-loose/-private/dsl';
 
 let textarea = resolve(Globals['textarea']);
 let Textarea = resolve(Globals['Textarea']);

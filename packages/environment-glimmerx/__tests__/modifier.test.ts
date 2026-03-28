@@ -1,5 +1,5 @@
 import { on as onDefinition } from '@glimmerx/modifier';
-import { resolve, applyModifier, NamedArgsMarker } from '@glint/environment-glimmerx/-private/dsl';
+import { resolve, applyModifier, NamedArgsMarker } from '@norith/glint-environment-glimmerx/-private/dsl';
 import { expectTypeOf } from 'expect-type';
 
 // Built-in modifier: `on`

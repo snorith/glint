@@ -61,7 +61,7 @@ export async function setupCompositeProject(): Promise<CompositeProject> {
 
   root.write(SHARED_TSCONFIG, JSON.stringify(BASE_TS_CONFIG, null, 2));
   root.mkdir('local-types');
-  root.write('local-types/index.d.ts', 'import "@glint/environment-ember-template-imports";');
+  root.write('local-types/index.d.ts', 'import "@norith/glint-environment-ember-template-imports";');
 
   let main = await Project.createExact(
     {

@@ -25,7 +25,7 @@ describe('Transform: rewriteModule', () => {
       expect(transformedModule?.transformedContents).toMatchInlineSnapshot(`
         "import Component, { hbs } from '@glimmerx/component';
         export default class MyComponent extends Component {
-          static template = ({} as typeof import(\\"@glint/environment-glimmerx/-private/dsl\\")).templateForBackingValue(this, function(𝚪, χ: typeof import(\\"@glint/environment-glimmerx/-private/dsl\\")) {
+          static template = ({} as typeof import(\\"@norith/glint-environment-glimmerx/-private/dsl\\")).templateForBackingValue(this, function(𝚪, χ: typeof import(\\"@norith/glint-environment-glimmerx/-private/dsl\\")) {
           hbs;
           𝚪; χ;
         });
@@ -50,7 +50,7 @@ describe('Transform: rewriteModule', () => {
       expect(transformedModule?.transformedContents).toMatchInlineSnapshot(`
         "import Component, { hbs } from '@glimmerx/component';
         export default class MyComponent<K extends string> extends Component<{ value: K }> {
-          static template = ({} as typeof import(\\"@glint/environment-glimmerx/-private/dsl\\")).templateForBackingValue(this, function(𝚪, χ: typeof import(\\"@glint/environment-glimmerx/-private/dsl\\")) {
+          static template = ({} as typeof import(\\"@norith/glint-environment-glimmerx/-private/dsl\\")).templateForBackingValue(this, function(𝚪, χ: typeof import(\\"@norith/glint-environment-glimmerx/-private/dsl\\")) {
           hbs;
           𝚪; χ;
         });
@@ -74,7 +74,7 @@ describe('Transform: rewriteModule', () => {
       expect(transformedModule?.transformedContents).toMatchInlineSnapshot(`
         "import Component, { hbs } from '@glimmerx/component';
         export default class extends Component {
-          static template = ({} as typeof import(\\"@glint/environment-glimmerx/-private/dsl\\")).templateForBackingValue(this, function(𝚪, χ: typeof import(\\"@glint/environment-glimmerx/-private/dsl\\")) {
+          static template = ({} as typeof import(\\"@norith/glint-environment-glimmerx/-private/dsl\\")).templateForBackingValue(this, function(𝚪, χ: typeof import(\\"@norith/glint-environment-glimmerx/-private/dsl\\")) {
           hbs;
           𝚪; χ;
         });
@@ -101,7 +101,7 @@ describe('Transform: rewriteModule', () => {
       expect(transformedModule?.transformedContents).toMatchInlineSnapshot(`
         "import Component, { hbs } from '@glimmerx/component';
         export default class MyComponent extends Component {
-          static template = ({} as typeof import(\\"@glint/environment-glimmerx/-private/dsl\\")).templateForBackingValue(this, function(𝚪, χ: typeof import(\\"@glint/environment-glimmerx/-private/dsl\\")) {
+          static template = ({} as typeof import(\\"@norith/glint-environment-glimmerx/-private/dsl\\")).templateForBackingValue(this, function(𝚪, χ: typeof import(\\"@norith/glint-environment-glimmerx/-private/dsl\\")) {
           hbs;
           𝚪; χ;
         });
@@ -112,10 +112,10 @@ describe('Transform: rewriteModule', () => {
     test('outer variable capture', () => {
       let testEnvironment = new GlintEnvironment(['test'], {
         tags: {
-          '@glint/test-env': {
-            hbsCaptureAll: { typesModule: '@glint/test-env', globals: [] },
-            hbsCaptureSome: { typesModule: '@glint/test-env', globals: ['global'] },
-            hbsCaptureNone: { typesModule: '@glint/test-env' },
+          '@norith/glint-test-env': {
+            hbsCaptureAll: { typesModule: '@norith/glint-test-env', globals: [] },
+            hbsCaptureSome: { typesModule: '@norith/glint-test-env', globals: ['global'] },
+            hbsCaptureNone: { typesModule: '@norith/glint-test-env' },
           },
         },
       });
@@ -123,7 +123,7 @@ describe('Transform: rewriteModule', () => {
       let script = {
         filename: 'test.ts',
         contents: stripIndent`
-          import { hbsCaptureAll, hbsCaptureSome, hbsCaptureNone } from '@glint/test-env';
+          import { hbsCaptureAll, hbsCaptureSome, hbsCaptureNone } from '@norith/glint-test-env';
 
           const message = 'hello';
 
@@ -137,23 +137,23 @@ describe('Transform: rewriteModule', () => {
 
       expect(transformedModule?.errors).toEqual([]);
       expect(transformedModule?.transformedContents).toMatchInlineSnapshot(`
-        "import { hbsCaptureAll, hbsCaptureSome, hbsCaptureNone } from '@glint/test-env';
+        "import { hbsCaptureAll, hbsCaptureSome, hbsCaptureNone } from '@norith/glint-test-env';
 
         const message = 'hello';
 
-        ({} as typeof import(\\"@glint/test-env\\")).templateExpression(function(𝚪, χ: typeof import(\\"@glint/test-env\\")) {
+        ({} as typeof import(\\"@norith/glint-test-env\\")).templateExpression(function(𝚪, χ: typeof import(\\"@norith/glint-test-env\\")) {
           hbsCaptureAll;
           χ.emitContent(χ.resolveOrReturn(global)());
           χ.emitContent(χ.resolveOrReturn(message)());
           𝚪; χ;
         });
-        ({} as typeof import(\\"@glint/test-env\\")).templateExpression(function(𝚪, χ: typeof import(\\"@glint/test-env\\")) {
+        ({} as typeof import(\\"@norith/glint-test-env\\")).templateExpression(function(𝚪, χ: typeof import(\\"@norith/glint-test-env\\")) {
           hbsCaptureSome;
           χ.emitContent(χ.resolveOrReturn(χ.Globals[\\"global\\"])());
           χ.emitContent(χ.resolveOrReturn(message)());
           𝚪; χ;
         });
-        ({} as typeof import(\\"@glint/test-env\\")).templateExpression(function(𝚪, χ: typeof import(\\"@glint/test-env\\")) {
+        ({} as typeof import(\\"@norith/glint-test-env\\")).templateExpression(function(𝚪, χ: typeof import(\\"@norith/glint-test-env\\")) {
           hbsCaptureNone;
           χ.emitContent(χ.resolveOrReturn(χ.Globals[\\"global\\"])());
           χ.emitContent(χ.resolveOrReturn(χ.Globals[\\"message\\"])());
@@ -188,7 +188,7 @@ describe('Transform: rewriteModule', () => {
         "import Component from '@glimmer/component';
         export default class MyComponent extends Component {
         static {
-        ({} as typeof import(\\"@glint/environment-ember-loose/-private/dsl\\")).templateForBackingValue(this, function(𝚪, χ: typeof import(\\"@glint/environment-ember-loose/-private/dsl\\")) {
+        ({} as typeof import(\\"@norith/glint-environment-ember-loose/-private/dsl\\")).templateForBackingValue(this, function(𝚪, χ: typeof import(\\"@norith/glint-environment-ember-loose/-private/dsl\\")) {
           𝚪; χ;
         })}
         }"
@@ -218,7 +218,7 @@ describe('Transform: rewriteModule', () => {
         "import Component from '@glimmer/component';
         class MyComponent extends Component {
         static {
-        ({} as typeof import(\\"@glint/environment-ember-loose/-private/dsl\\")).templateForBackingValue(this, function(𝚪, χ: typeof import(\\"@glint/environment-ember-loose/-private/dsl\\")) {
+        ({} as typeof import(\\"@norith/glint-environment-ember-loose/-private/dsl\\")).templateForBackingValue(this, function(𝚪, χ: typeof import(\\"@norith/glint-environment-ember-loose/-private/dsl\\")) {
           𝚪; χ;
         })}
         }
@@ -248,7 +248,7 @@ describe('Transform: rewriteModule', () => {
         "import Component from '@glimmer/component';
         export default class MyComponent<K extends string> extends Component<{ value: K }> {
         static {
-        ({} as typeof import(\\"@glint/environment-ember-loose/-private/dsl\\")).templateForBackingValue(this, function(𝚪, χ: typeof import(\\"@glint/environment-ember-loose/-private/dsl\\")) {
+        ({} as typeof import(\\"@norith/glint-environment-ember-loose/-private/dsl\\")).templateForBackingValue(this, function(𝚪, χ: typeof import(\\"@norith/glint-environment-ember-loose/-private/dsl\\")) {
           𝚪; χ;
         })}
         }"
@@ -276,7 +276,7 @@ describe('Transform: rewriteModule', () => {
         "import Component from '@glimmer/component';
         export default class extends Component {
         static {
-        ({} as typeof import(\\"@glint/environment-ember-loose/-private/dsl\\")).templateForBackingValue(this, function(𝚪, χ: typeof import(\\"@glint/environment-ember-loose/-private/dsl\\")) {
+        ({} as typeof import(\\"@norith/glint-environment-ember-loose/-private/dsl\\")).templateForBackingValue(this, function(𝚪, χ: typeof import(\\"@norith/glint-environment-ember-loose/-private/dsl\\")) {
           𝚪; χ;
         })}
         }"
@@ -303,7 +303,7 @@ describe('Transform: rewriteModule', () => {
       expect(transformedModule?.transformedContents).toMatchInlineSnapshot(`
         "import Component from '@glimmer/component';
         export class MyComponent extends Component {}
-        ({} as typeof import(\\"@glint/environment-ember-loose/-private/dsl\\")).templateExpression(function(𝚪, χ: typeof import(\\"@glint/environment-ember-loose/-private/dsl\\")) {
+        ({} as typeof import(\\"@norith/glint-environment-ember-loose/-private/dsl\\")).templateExpression(function(𝚪, χ: typeof import(\\"@norith/glint-environment-ember-loose/-private/dsl\\")) {
           χ.emitContent(χ.resolveOrReturn(χ.Globals[\\"hello\\"])());
           𝚪; χ;
         });
@@ -333,7 +333,7 @@ describe('Transform: rewriteModule', () => {
         "import templateOnly from '@glimmer/component/template-only';
 
         export default templateOnly();
-        ({} as typeof import(\\"@glint/environment-ember-loose/-private/dsl\\")).templateForBackingValue(({} as unknown as typeof import('./test').default), function(𝚪, χ: typeof import(\\"@glint/environment-ember-loose/-private/dsl\\")) {
+        ({} as typeof import(\\"@norith/glint-environment-ember-loose/-private/dsl\\")).templateForBackingValue(({} as unknown as typeof import('./test').default), function(𝚪, χ: typeof import(\\"@norith/glint-environment-ember-loose/-private/dsl\\")) {
           𝚪; χ;
         });
         "
@@ -362,7 +362,7 @@ describe('Transform: rewriteModule', () => {
         "import templateOnly from '@glimmer/component/template-only';
 
         export default templateOnly();
-        (/** @type {typeof import(\\"@glint/environment-ember-loose/-private/dsl\\")} */ ({})).templateForBackingValue((/** @type {typeof import('./test').default} */ ({})), function(𝚪, /** @type {typeof import(\\"@glint/environment-ember-loose/-private/dsl\\")} */ χ) {
+        (/** @type {typeof import(\\"@norith/glint-environment-ember-loose/-private/dsl\\")} */ ({})).templateForBackingValue((/** @type {typeof import('./test').default} */ ({})), function(𝚪, /** @type {typeof import(\\"@norith/glint-environment-ember-loose/-private/dsl\\")} */ χ) {
           𝚪; χ;
         });
         "
@@ -387,7 +387,7 @@ describe('Transform: rewriteModule', () => {
       expect(transformedModule?.errors).toEqual([]);
       expect(transformedModule?.transformedContents).toMatchInlineSnapshot(`
         "export default Foo;
-        ({} as typeof import(\\"@glint/environment-ember-loose/-private/dsl\\")).templateForBackingValue(({} as unknown as typeof import('./test').default), function(𝚪, χ: typeof import(\\"@glint/environment-ember-loose/-private/dsl\\")) {
+        ({} as typeof import(\\"@norith/glint-environment-ember-loose/-private/dsl\\")).templateForBackingValue(({} as unknown as typeof import('./test').default), function(𝚪, χ: typeof import(\\"@norith/glint-environment-ember-loose/-private/dsl\\")) {
           χ.emitContent(χ.resolveOrReturn(χ.Globals[\\"hello\\"])());
           𝚪; χ;
         });
@@ -402,7 +402,7 @@ describe('Transform: rewriteModule', () => {
           import Component from '@glimmer/component';
           export default class MyComponent extends Component {
           }
-          declare module '@glint/environment-ember-loose/registry' {
+          declare module '@norith/glint-environment-ember-loose/registry' {
             export default interface Registry {
               Test: MyComponent;
             }
@@ -422,11 +422,11 @@ describe('Transform: rewriteModule', () => {
         "import Component from '@glimmer/component';
         export default class MyComponent extends Component {
         static {
-        ({} as typeof import(\\"@glint/environment-ember-loose/-private/dsl\\")).templateForBackingValue(this, function(𝚪, χ: typeof import(\\"@glint/environment-ember-loose/-private/dsl\\")) {
+        ({} as typeof import(\\"@norith/glint-environment-ember-loose/-private/dsl\\")).templateForBackingValue(this, function(𝚪, χ: typeof import(\\"@norith/glint-environment-ember-loose/-private/dsl\\")) {
           𝚪; χ;
         })}
         }
-        declare module '@glint/environment-ember-loose/registry' {
+        declare module '@norith/glint-environment-ember-loose/registry' {
           export default interface Registry {
             Test: MyComponent;
           }
@@ -458,7 +458,7 @@ describe('Transform: rewriteModule', () => {
         "import Component from '@glimmer/component';
         export default class MyComponent extends Component {
         static {
-        ({} as typeof import(\\"@glint/environment-ember-loose/-private/dsl\\")).templateForBackingValue(this, function(𝚪, χ: typeof import(\\"@glint/environment-ember-loose/-private/dsl\\")) {
+        ({} as typeof import(\\"@norith/glint-environment-ember-loose/-private/dsl\\")).templateForBackingValue(this, function(𝚪, χ: typeof import(\\"@norith/glint-environment-ember-loose/-private/dsl\\")) {
           𝚪; χ;
         })}
         }"
@@ -500,7 +500,7 @@ describe('Transform: rewriteModule', () => {
 
         | Mapping: TemplateEmbedding
         |  hbs(22:74):   <template>\\\\n    Hello, {{this.target}}!\\\\n  </template>
-        |  ts(22:299):   static { ({} as typeof import(\\"@glint/environment-ember-template-imports/-private/dsl\\")).templateForBackingValue(this, function(𝚪, χ: typeof import(\\"@glint/environment-ember-template-imports/-private/dsl\\")) {\\\\n  χ.emitContent(χ.resolveOrReturn(𝚪.this.target)());\\\\n  𝚪; χ;\\\\n}) }
+        |  ts(22:299):   static { ({} as typeof import(\\"@norith/glint-environment-ember-template-imports/-private/dsl\\")).templateForBackingValue(this, function(𝚪, χ: typeof import(\\"@norith/glint-environment-ember-template-imports/-private/dsl\\")) {\\\\n  χ.emitContent(χ.resolveOrReturn(𝚪.this.target)());\\\\n  𝚪; χ;\\\\n}) }
         |
         | | Mapping: Template
         | |  hbs(32:63):   Hello, {{this.target}}!
@@ -553,7 +553,7 @@ describe('Transform: rewriteModule', () => {
 
         | Mapping: TemplateEmbedding
         |  hbs(0:44):    <template>\\\\n  Hello, {{@target}}!\\\\n</template>
-        |  ts(0:270):    export default ({} as typeof import(\\"@glint/environment-ember-template-imports/-private/dsl\\")).templateExpression(function(𝚪, χ: typeof import(\\"@glint/environment-ember-template-imports/-private/dsl\\")) {\\\\n  χ.emitContent(χ.resolveOrReturn(𝚪.args.target)());\\\\n  𝚪; χ;\\\\n})
+        |  ts(0:270):    export default ({} as typeof import(\\"@norith/glint-environment-ember-template-imports/-private/dsl\\")).templateExpression(function(𝚪, χ: typeof import(\\"@norith/glint-environment-ember-template-imports/-private/dsl\\")) {\\\\n  χ.emitContent(χ.resolveOrReturn(𝚪.args.target)());\\\\n  𝚪; χ;\\\\n})
         |
         | | Mapping: Template
         | |  hbs(10:33):   Hello, {{@target}}!
@@ -617,7 +617,7 @@ describe('Transform: rewriteModule', () => {
 
         | Mapping: TemplateEmbedding
         |  hbs(56:89):   <template>{{@message}}</template>
-        |  ts(56:312):   ({} as typeof import(\\"@glint/environment-ember-template-imports/-private/dsl\\")).templateExpression(function(𝚪, χ: typeof import(\\"@glint/environment-ember-template-imports/-private/dsl\\")) {\\\\n  χ.emitContent(χ.resolveOrReturn(𝚪.args.message)());\\\\n  𝚪; χ;\\\\n})
+        |  ts(56:312):   ({} as typeof import(\\"@norith/glint-environment-ember-template-imports/-private/dsl\\")).templateExpression(function(𝚪, χ: typeof import(\\"@norith/glint-environment-ember-template-imports/-private/dsl\\")) {\\\\n  χ.emitContent(χ.resolveOrReturn(𝚪.args.message)());\\\\n  𝚪; χ;\\\\n})
         |
         | | Mapping: Template
         | |  hbs(66:78):   {{@message}}
@@ -642,7 +642,7 @@ describe('Transform: rewriteModule', () => {
 
         | Mapping: TemplateEmbedding
         |  hbs(139:174): <template>{{this.title}}</template>
-        |  ts(362:638):  static { ({} as typeof import(\\"@glint/environment-ember-template-imports/-private/dsl\\")).templateForBackingValue(this, function(𝚪, χ: typeof import(\\"@glint/environment-ember-template-imports/-private/dsl\\")) {\\\\n  χ.emitContent(χ.resolveOrReturn(𝚪.this.title)());\\\\n  𝚪; χ;\\\\n}) }
+        |  ts(362:638):  static { ({} as typeof import(\\"@norith/glint-environment-ember-template-imports/-private/dsl\\")).templateForBackingValue(this, function(𝚪, χ: typeof import(\\"@norith/glint-environment-ember-template-imports/-private/dsl\\")) {\\\\n  χ.emitContent(χ.resolveOrReturn(𝚪.this.title)());\\\\n  𝚪; χ;\\\\n}) }
         |
         | | Mapping: Template
         | |  hbs(149:163): {{this.title}}
@@ -693,7 +693,7 @@ describe('Transform: rewriteModule', () => {
 
         | Mapping: TemplateEmbedding
         |  hbs(58:210):  <template>\\\\n  {{! Intentionally shadowing }}\\\\n  {{#let (arr 1 2) (h red=\\"blue\\") as |arr h|}}\\\\n    Array is {{arr}}\\\\n    Hash is {{h}}\\\\n  {{/let}}\\\\n</template>
-        |  ts(58:585):   export default ({} as typeof import(\\"@glint/environment-ember-template-imports/-private/dsl\\")).templateExpression(function(𝚪, χ: typeof import(\\"@glint/environment-ember-template-imports/-private/dsl\\")) {\\\\n  {\\\\n    const 𝛄 = χ.emitComponent(χ.resolve(χ.Globals[\\"let\\"])((χ.noop(arr), [1, 2]), (χ.noop(h), ({\\\\n      red: \\"blue\\",\\\\n    }))));\\\\n    {\\\\n      const [arr, h] = 𝛄.blockParams[\\"default\\"];\\\\n      χ.emitContent(χ.resolveOrReturn(arr)());\\\\n      χ.emitContent(χ.resolveOrReturn(h)());\\\\n    }\\\\n    χ.Globals[\\"let\\"];\\\\n  }\\\\n  𝚪; χ;\\\\n})
+        |  ts(58:585):   export default ({} as typeof import(\\"@norith/glint-environment-ember-template-imports/-private/dsl\\")).templateExpression(function(𝚪, χ: typeof import(\\"@norith/glint-environment-ember-template-imports/-private/dsl\\")) {\\\\n  {\\\\n    const 𝛄 = χ.emitComponent(χ.resolve(χ.Globals[\\"let\\"])((χ.noop(arr), [1, 2]), (χ.noop(h), ({\\\\n      red: \\"blue\\",\\\\n    }))));\\\\n    {\\\\n      const [arr, h] = 𝛄.blockParams[\\"default\\"];\\\\n      χ.emitContent(χ.resolveOrReturn(arr)());\\\\n      χ.emitContent(χ.resolveOrReturn(h)());\\\\n    }\\\\n    χ.Globals[\\"let\\"];\\\\n  }\\\\n  𝚪; χ;\\\\n})
         |
         | | Mapping: Template
         | |  hbs(68:199):  {{! Intentionally shadowing }}\\\\n  {{#let (arr 1 2) (h red=\\"blue\\") as |arr h|}}\\\\n    Array is {{arr}}\\\\n    Hash is {{h}}\\\\n  {{/let}}

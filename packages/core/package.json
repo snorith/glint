@@ -1,7 +1,7 @@
 {
-  "name": "@glint/core",
-  "version": "1.2.1",
-  "repository": "typed-ember/glint",
+  "name": "@norith/glint-core",
+  "version": "1.0.0",
+  "repository": "https://github.com/snorith/glint",
   "description": "A CLI for performing typechecking on Glimmer templates",
   "license": "MIT",
   "author": "Dan Freeman (https://github.com/dfreeman)",
@@ -56,6 +56,7 @@
     "vitest": "^0.22.0"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   }
 }

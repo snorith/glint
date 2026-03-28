@@ -1,4 +1,4 @@
-import { DirectInvokable, NamedArgs } from '@glint/template/-private/integration';
+import { DirectInvokable, NamedArgs } from '@norith/glint-template/-private/integration';
 
 export type ActionNamedArgs<T> = NamedArgs<{
   value?: keyof T;

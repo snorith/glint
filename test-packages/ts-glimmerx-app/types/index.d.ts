@@ -1,6 +1,6 @@
-import '@glint/environment-glimmerx';
+import '@norith/glint-environment-glimmerx';
 import type { Helper } from '@glimmerx/helper';
-declare module '@glint/environment-glimmerx/globals' {
+declare module '@norith/glint-environment-glimmerx/globals' {
   export default interface Globals {
     t: Helper<{
       Args: {

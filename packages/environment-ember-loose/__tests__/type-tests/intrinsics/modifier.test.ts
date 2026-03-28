@@ -1,6 +1,6 @@
 import Modifier from 'ember-modifier';
 import { hbs } from 'ember-cli-htmlbars';
-import { typeTest } from '@glint/type-test';
+import { typeTest } from '@norith/glint-type-test';
 
 class Render3DModelModifier extends Modifier<{
   Element: HTMLCanvasElement;

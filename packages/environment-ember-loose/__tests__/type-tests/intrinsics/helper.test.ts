@@ -1,6 +1,6 @@
 import Helper from '@ember/component/helper';
 import { hbs } from 'ember-cli-htmlbars';
-import { typeTest } from '@glint/type-test';
+import { typeTest } from '@norith/glint-type-test';
 
 class GreetHelper extends Helper<{
   Args: {

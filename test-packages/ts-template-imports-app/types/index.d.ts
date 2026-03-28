@@ -1,8 +1,8 @@
-import '@glint/environment-ember-template-imports';
+import '@norith/glint-environment-ember-template-imports';
 
-import { HelperLike } from '@glint/template';
+import { HelperLike } from '@norith/glint-template';
 
-declare module '@glint/environment-ember-template-imports/globals' {
+declare module '@norith/glint-environment-ember-template-imports/globals' {
   export default interface Globals {
     t: HelperLike<{
       Args: {

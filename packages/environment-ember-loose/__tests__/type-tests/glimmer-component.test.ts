@@ -5,9 +5,9 @@ import {
   yieldToBlock,
   emitComponent,
   NamedArgsMarker,
-} from '@glint/environment-ember-loose/-private/dsl';
+} from '@norith/glint-environment-ember-loose/-private/dsl';
 import { expectTypeOf } from 'expect-type';
-import { ComponentLike } from '@glint/template';
+import { ComponentLike } from '@norith/glint-template';
 
 {
   class NoArgsComponent extends Component {}

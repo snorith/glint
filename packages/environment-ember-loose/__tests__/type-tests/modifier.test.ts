@@ -1,8 +1,8 @@
 import Modifier, { modifier, type ArgsFor } from 'ember-modifier';
-import { NamedArgsMarker, resolve } from '@glint/environment-ember-loose/-private/dsl';
+import { NamedArgsMarker, resolve } from '@norith/glint-environment-ember-loose/-private/dsl';
 import { expectTypeOf } from 'expect-type';
-import { ModifierReturn } from '@glint/template/-private/integration';
-import { ModifierLike } from '@glint/template';
+import { ModifierReturn } from '@norith/glint-template/-private/integration';
+import { ModifierLike } from '@norith/glint-template';
 import { registerDestructor } from '@ember/destroyable';
 import type Owner from '@ember/owner';
 

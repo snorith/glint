@@ -1,1 +1,1 @@
-import '@glint/environment-ember-loose';
+import '@norith/glint-environment-ember-loose';

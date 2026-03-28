@@ -1,4 +1,4 @@
-import { GlintEnvironmentConfig, GlintTagConfig } from '@glint/core/config-types';
+import { GlintEnvironmentConfig, GlintTagConfig } from '@norith/glint-core/config-types';
 
 export default function glimmerxEnvironment(
   config: Record<string, unknown>
@@ -8,7 +8,7 @@ export default function glimmerxEnvironment(
     : [];
 
   let tagConfig: GlintTagConfig = {
-    typesModule: '@glint/environment-glimmerx/-private/dsl',
+    typesModule: '@norith/glint-environment-glimmerx/-private/dsl',
     specialForms: {
       globals: {
         if: 'if',

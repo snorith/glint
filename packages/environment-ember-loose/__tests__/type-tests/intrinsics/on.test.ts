@@ -4,7 +4,7 @@ import {
   applyModifier,
   resolve,
   NamedArgsMarker,
-} from '@glint/environment-ember-loose/-private/dsl';
+} from '@norith/glint-environment-ember-loose/-private/dsl';
 
 const on = resolve(Globals['on']);
 const el = document.createElement('div');

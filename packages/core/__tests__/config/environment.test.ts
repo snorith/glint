@@ -1,7 +1,7 @@
 import * as fs from 'node:fs';
 import * as os from 'node:os';
 import { describe, beforeEach, afterEach, test, expect } from 'vitest';
-import { GlintExtensionPreprocess, GlintExtensionTransform } from '@glint/core/config-types';
+import { GlintExtensionPreprocess, GlintExtensionTransform } from '@norith/glint-core/config-types';
 import { GlintEnvironment } from '../../src/config/environment.js';
 
 describe('Config: Environments', () => {
@@ -48,7 +48,7 @@ describe('Config: Environments', () => {
       let tags = {
         '@glimmerx/component': {
           hbs: {
-            typesModule: '@glint/environment-glimmerx/-private/dsl',
+            typesModule: '@norith/glint-environment-glimmerx/-private/dsl',
           },
         },
       };
@@ -71,7 +71,7 @@ describe('Config: Environments', () => {
     test('reflecting specified configuration', () => {
       let env = new GlintEnvironment(['test-env'], {
         template: {
-          typesModule: '@glint/test-env/types',
+          typesModule: '@norith/glint-test-env/types',
           specialForms: {
             obj: 'object-literal',
           },
@@ -86,7 +86,7 @@ describe('Config: Environments', () => {
       });
 
       expect(env.getStandaloneTemplateConfig()).toEqual({
-        typesModule: '@glint/test-env/types',
+        typesModule: '@norith/glint-test-env/types',
         specialForms: { obj: 'object-literal' },
       });
 
@@ -162,7 +162,7 @@ describe('Config: Environments', () => {
       fs.writeFileSync(
         `${envDir}/package.json`,
         JSON.stringify({
-          name: '@glint/environment-test-env',
+          name: '@norith/glint-environment-test-env',
           exports: {
             './glint-environment-definition': './env.js',
           },

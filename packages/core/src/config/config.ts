@@ -1,6 +1,6 @@
 import * as path from 'node:path';
 import { GlintEnvironment } from './environment.js';
-import { GlintConfigInput } from '@glint/core/config-types';
+import { GlintConfigInput } from '@norith/glint-core/config-types';
 
 /**
  * This class represents parsed Glint configuration from a `tsconfig` or `jsconfig` file,

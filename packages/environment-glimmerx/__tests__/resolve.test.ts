@@ -1,5 +1,5 @@
 import { expectTypeOf } from 'expect-type';
-import { resolve, resolveOrReturn } from '@glint/environment-glimmerx/-private/dsl';
+import { resolve, resolveOrReturn } from '@norith/glint-environment-glimmerx/-private/dsl';
 
 {
   const shout = (arg: string): string => arg.toUpperCase();

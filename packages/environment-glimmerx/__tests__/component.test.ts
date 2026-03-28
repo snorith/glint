@@ -6,9 +6,9 @@ import {
   yieldToBlock,
   emitComponent,
   NamedArgsMarker,
-} from '@glint/environment-glimmerx/-private/dsl';
+} from '@norith/glint-environment-glimmerx/-private/dsl';
 import { expectTypeOf } from 'expect-type';
-import { ComponentReturn } from '@glint/template/-private/integration';
+import { ComponentReturn } from '@norith/glint-template/-private/integration';
 
 {
   class NoArgsComponent extends Component {

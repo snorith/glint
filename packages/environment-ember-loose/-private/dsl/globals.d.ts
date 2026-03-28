@@ -1,4 +1,4 @@
-import * as VM from '@glint/template/-private/keywords';
+import * as VM from '@norith/glint-template/-private/keywords';
 
 import { ActionKeyword } from '../intrinsics/action';
 import { ConcatHelper } from '../intrinsics/concat';

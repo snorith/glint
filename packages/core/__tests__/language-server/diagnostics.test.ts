@@ -16,9 +16,9 @@ describe('Language Server: Diagnostics', () => {
   describe('checkStandaloneTemplates', () => {
     beforeEach(() => {
       let registry = stripIndent`
-        import { ComponentLike } from '@glint/template';
+        import { ComponentLike } from '@norith/glint-template';
 
-        declare module '@glint/environment-ember-loose/registry' {
+        declare module '@norith/glint-environment-ember-loose/registry' {
           export default interface Registry {
             Foo: ComponentLike<{ Args: { name: string } }>;
           }

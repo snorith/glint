@@ -1,5 +1,5 @@
 import type * as ts from 'typescript';
-import { GlintTagConfig } from '@glint/core/config-types';
+import { GlintTagConfig } from '@norith/glint-core/config-types';
 import { GlintEnvironment } from '../../../config/index.js';
 import { CorrelatedSpansResult, isEmbeddedInClass, PartialCorrelatedSpan } from './index.js';
 import { templateToTypescript } from '../template-to-typescript.js';
@@ -9,7 +9,7 @@ import {
   GlintEmitMetadata,
   GlintSpecialForm,
   GlintSpecialFormConfig,
-} from '@glint/core/config-types';
+} from '@norith/glint-core/config-types';
 
 export function calculateTaggedTemplateSpans(
   ts: TSLib,

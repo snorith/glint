@@ -1,8 +1,8 @@
 import Helper, { helper } from '@ember/component/helper';
-import { resolve, NamedArgsMarker } from '@glint/environment-ember-loose/-private/dsl';
+import { resolve, NamedArgsMarker } from '@norith/glint-environment-ember-loose/-private/dsl';
 import { expectTypeOf } from 'expect-type';
-import { HelperLike } from '@glint/template';
-import { NamedArgs } from '@glint/template/-private/integration';
+import { HelperLike } from '@norith/glint-template';
+import { NamedArgs } from '@norith/glint-template/-private/integration';
 
 // Functional helper: fixed signature params
 {

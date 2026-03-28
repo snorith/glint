@@ -59,7 +59,7 @@ describe('CLI: watched build mode typechecking', () => {
 
     test('passes a valid basic project', async () => {
       let code = stripIndent`
-        import '@glint/environment-ember-template-imports';
+        import '@norith/glint-environment-ember-template-imports';
         import Component from '@glimmer/component';
 
         type ApplicationArgs = {
@@ -87,7 +87,7 @@ describe('CLI: watched build mode typechecking', () => {
 
     test('reports diagnostics for a template syntax error', async () => {
       let code = stripIndent`
-        import '@glint/environment-ember-template-imports';
+        import '@norith/glint-environment-ember-template-imports';
         import Component from '@glimmer/component';
 
         type ApplicationArgs = {
@@ -124,7 +124,7 @@ describe('CLI: watched build mode typechecking', () => {
 
     test('reports diagnostics for a template type error', async () => {
       let code = stripIndent`
-        import '@glint/environment-ember-template-imports';
+        import '@norith/glint-environment-ember-template-imports';
         import Component from '@glimmer/component';
 
         type ApplicationArgs = {
@@ -168,7 +168,7 @@ describe('CLI: watched build mode typechecking', () => {
 
     test('reports on errors introduced and cleared during the watch', async () => {
       let code = stripIndent`
-        import '@glint/environment-ember-template-imports';
+        import '@norith/glint-environment-ember-template-imports';
         import Component from '@glimmer/component';
 
         type ApplicationArgs = {
@@ -211,7 +211,7 @@ describe('CLI: watched build mode typechecking', () => {
 
     test('reports on errors introduced after removing a glint-nocheck directive', async () => {
       let code = stripIndent`
-        import '@glint/environment-ember-template-imports';
+        import '@norith/glint-environment-ember-template-imports';
         import Component from '@glimmer/component';
 
         type ApplicationArgs = {

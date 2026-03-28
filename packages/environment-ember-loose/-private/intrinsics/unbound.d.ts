@@ -1,4 +1,4 @@
-import { HelperLike } from '@glint/template';
+import { HelperLike } from '@norith/glint-template';
 
 export type UnboundKeyword = abstract new <T>() => InstanceType<
   HelperLike<{

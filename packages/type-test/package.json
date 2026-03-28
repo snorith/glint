@@ -1,7 +1,7 @@
 {
-  "name": "@glint/type-test",
-  "version": "1.2.1",
-  "repository": "typed-ember/glint",
+  "name": "@norith/glint-type-test",
+  "version": "1.0.0",
+  "repository": "https://github.com/snorith/glint",
   "description": "Tools for testing inferred types in Glint-enabled templates",
   "license": "MIT",
   "author": "Dan Freeman (https://github.com/dfreeman)",
@@ -21,7 +21,7 @@
     "expect-type": "^0.15.0"
   },
   "peerDependencies": {
-    "@glint/template": "^1.2.1"
+    "@norith/glint-template": "1.0.0"
   },
   "publishConfig": {
     "access": "public"

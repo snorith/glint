@@ -1,4 +1,4 @@
-export * from '@glint/template/-private/dsl';
+export * from '@norith/glint-template/-private/dsl';
 export { Globals } from './globals';
 
 import './integration-declarations';
@@ -21,7 +21,7 @@ import './integration-declarations';
  * further details on resolution.
  */
 
-import { ResolveOrReturn } from '@glint/template/-private/dsl';
+import { ResolveOrReturn } from '@norith/glint-template/-private/dsl';
 import {
   ComponentReturn,
   AnyContext,
@@ -33,7 +33,7 @@ import {
   InvokeDirect,
   TemplateContext,
   ModifierReturn,
-} from '@glint/template/-private/integration';
+} from '@norith/glint-template/-private/integration';
 
 export declare function resolve<T extends DirectInvokable>(item: T): T[typeof InvokeDirect];
 export declare function resolve<Args extends unknown[], Instance extends InvokableInstance>(

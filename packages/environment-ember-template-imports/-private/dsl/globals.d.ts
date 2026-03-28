@@ -1,4 +1,4 @@
-import { Globals as EELGlobals } from '@glint/environment-ember-loose/-private/dsl';
+import { Globals as EELGlobals } from '@norith/glint-environment-ember-loose/-private/dsl';
 import Globals from '../../globals';
 
 interface Keywords

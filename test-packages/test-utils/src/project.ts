@@ -3,8 +3,8 @@ import * as fs from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
 import { execaNode, ExecaChildProcess, Options } from 'execa';
-import { type GlintConfigInput } from '@glint/core/config-types';
-import { pathUtils, analyzeProject, ProjectAnalysis } from '@glint/core';
+import { type GlintConfigInput } from '@norith/glint-core/config-types';
+import { pathUtils, analyzeProject, ProjectAnalysis } from '@norith/glint-core';
 
 type GlintLanguageServer = ProjectAnalysis['languageServer'];
 
@@ -175,7 +175,7 @@ export class Project {
   }
 
   public check(options: Options & { flags?: string[] } = {}): ExecaChildProcess {
-    return execaNode(require.resolve('@glint/core/bin/glint'), options.flags, {
+    return execaNode(require.resolve('@norith/glint-core/bin/glint'), options.flags, {
       cwd: this.rootDir,
       ...options,
     });
@@ -188,7 +188,7 @@ export class Project {
   public build(options: Options & { flags?: string[] } = {}, debug = false): ExecaChildProcess {
     let build = ['--build'];
     let flags = options.flags ? build.concat(options.flags) : build;
-    return execaNode(require.resolve('@glint/core/bin/glint'), flags, {
+    return execaNode(require.resolve('@norith/glint-core/bin/glint'), flags, {
       cwd: this.rootDir,
       nodeOptions: debug ? ['--inspect-brk'] : [],
       ...options,

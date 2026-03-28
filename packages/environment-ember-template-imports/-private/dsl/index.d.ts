@@ -1,9 +1,9 @@
-export * from '@glint/template/-private/dsl';
+export * from '@norith/glint-template/-private/dsl';
 export { Globals } from './globals';
 
 import './integration-declarations';
 
-import { ResolveOrReturn } from '@glint/template/-private/dsl';
+import { ResolveOrReturn } from '@norith/glint-template/-private/dsl';
 import {
   ComponentReturn,
   AnyContext,
@@ -14,7 +14,7 @@ import {
   Invoke,
   InvokeDirect,
   TemplateContext,
-} from '@glint/template/-private/integration';
+} from '@norith/glint-template/-private/integration';
 
 // Items that can be directly invoked by value
 export declare function resolve<T extends DirectInvokable>(item: T): T[typeof InvokeDirect];

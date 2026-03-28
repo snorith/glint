@@ -13,7 +13,7 @@ describe('Transform: rewriteTemplate', () => {
     options: Omit<TemplateToTypescriptOptions, 'typesModule'> = {}
   ): string {
     let { result, errors } = templateToTypescript(template, {
-      typesModule: '@glint/template',
+      typesModule: '@norith/glint-template',
       ...options,
     });
     if (errors.length) {
@@ -29,9 +29,9 @@ describe('Transform: rewriteTemplate', () => {
 
   describe('template boilerplate', () => {
     test('without any specified type parameters or context type', () => {
-      expect(templateToTypescript('', { typesModule: '@glint/template' }).result?.code)
+      expect(templateToTypescript('', { typesModule: '@norith/glint-template' }).result?.code)
         .toMatchInlineSnapshot(`
-          "({} as typeof import(\\"@glint/template\\")).templateExpression(function(𝚪, χ: typeof import(\\"@glint/template\\")) {
+          "({} as typeof import(\\"@norith/glint-template\\")).templateExpression(function(𝚪, χ: typeof import(\\"@norith/glint-template\\")) {
             𝚪; χ;
           })"
         `);
@@ -39,10 +39,10 @@ describe('Transform: rewriteTemplate', () => {
 
     test('given a backing value', () => {
       expect(
-        templateToTypescript('', { backingValue: 'someValue', typesModule: '@glint/template' })
+        templateToTypescript('', { backingValue: 'someValue', typesModule: '@norith/glint-template' })
           .result?.code
       ).toMatchInlineSnapshot(`
-        "({} as typeof import(\\"@glint/template\\")).templateForBackingValue(someValue, function(𝚪, χ: typeof import(\\"@glint/template\\")) {
+        "({} as typeof import(\\"@norith/glint-template\\")).templateForBackingValue(someValue, function(𝚪, χ: typeof import(\\"@norith/glint-template\\")) {
           𝚪; χ;
         })"
       `);
@@ -51,9 +51,9 @@ describe('Transform: rewriteTemplate', () => {
     test('given preamble code', () => {
       let preamble = ['console.log("hello!");', 'throw new Error();'];
 
-      expect(templateToTypescript('', { preamble, typesModule: '@glint/template' }).result?.code)
+      expect(templateToTypescript('', { preamble, typesModule: '@norith/glint-template' }).result?.code)
         .toMatchInlineSnapshot(`
-          "({} as typeof import(\\"@glint/template\\")).templateExpression(function(𝚪, χ: typeof import(\\"@glint/template\\")) {
+          "({} as typeof import(\\"@norith/glint-template\\")).templateExpression(function(𝚪, χ: typeof import(\\"@norith/glint-template\\")) {
             console.log(\\"hello!\\");
             throw new Error();
             𝚪; χ;
@@ -71,7 +71,7 @@ describe('Transform: rewriteTemplate', () => {
         </Foo>
       `;
 
-      let { result, errors } = templateToTypescript(template, { typesModule: '@glint/template' });
+      let { result, errors } = templateToTypescript(template, { typesModule: '@norith/glint-template' });
 
       expect(errors).toEqual([]);
       expect(result?.directives).toEqual([
@@ -100,7 +100,7 @@ describe('Transform: rewriteTemplate', () => {
         </Foo>
       `;
 
-      let { result, errors } = templateToTypescript(template, { typesModule: '@glint/template' });
+      let { result, errors } = templateToTypescript(template, { typesModule: '@norith/glint-template' });
 
       expect(errors).toEqual([]);
       expect(result?.directives).toEqual([
@@ -126,7 +126,7 @@ describe('Transform: rewriteTemplate', () => {
         {{this.baz}}
       `;
 
-      let { result, errors } = templateToTypescript(template, { typesModule: '@glint/template' });
+      let { result, errors } = templateToTypescript(template, { typesModule: '@norith/glint-template' });
 
       expect(errors).toEqual([]);
       expect(result?.directives).toEqual([
@@ -161,7 +161,7 @@ describe('Transform: rewriteTemplate', () => {
         </Foo>
       `;
 
-      let { result, errors } = templateToTypescript(template, { typesModule: '@glint/template' });
+      let { result, errors } = templateToTypescript(template, { typesModule: '@norith/glint-template' });
 
       expect(errors).toEqual([]);
       expect(result?.directives).toEqual([
@@ -187,7 +187,7 @@ describe('Transform: rewriteTemplate', () => {
         </Foo>
       `;
 
-      let { result, errors } = templateToTypescript(template, { typesModule: '@glint/template' });
+      let { result, errors } = templateToTypescript(template, { typesModule: '@norith/glint-template' });
 
       expect(result?.directives).toEqual([]);
       expect(errors).toEqual([
@@ -1285,7 +1285,7 @@ describe('Transform: rewriteTemplate', () => {
   describe('error conditions', () => {
     test('Handlebars syntax error', () => {
       let { errors } = templateToTypescript('<Foo @attr={{"123}} />', {
-        typesModule: '@glint/template',
+        typesModule: '@norith/glint-template',
       });
 
       expect(errors).toEqual([
@@ -1303,7 +1303,7 @@ describe('Transform: rewriteTemplate', () => {
 
     test('HTML syntax error', () => {
       let { errors } = templateToTypescript('<Foo </Foo>', {
-        typesModule: '@glint/template',
+        typesModule: '@norith/glint-template',
       });
 
       expect(errors).toEqual([
@@ -1317,7 +1317,7 @@ describe('Transform: rewriteTemplate', () => {
 
     test('{{yield}} in expression position', () => {
       let { errors } = templateToTypescript('<Foo @attr={{testYield}} />', {
-        typesModule: '@glint/template',
+        typesModule: '@norith/glint-template',
         specialForms: { testYield: 'yield' },
       });
 
@@ -1331,7 +1331,7 @@ describe('Transform: rewriteTemplate', () => {
 
     test('{{yield}} to a dynamic named block', () => {
       let { errors } = templateToTypescript('{{testYield to=@blockName}}', {
-        typesModule: '@glint/template',
+        typesModule: '@norith/glint-template',
         specialForms: { testYield: 'yield' },
       });
 
@@ -1345,7 +1345,7 @@ describe('Transform: rewriteTemplate', () => {
 
     test('{{hash}} with positional parameters', () => {
       let { errors } = templateToTypescript('<Foo @attr={{testHash 123 foo="bar"}} />', {
-        typesModule: '@glint/template',
+        typesModule: '@norith/glint-template',
         specialForms: { testHash: 'object-literal' },
       });
 
@@ -1359,7 +1359,7 @@ describe('Transform: rewriteTemplate', () => {
 
     test('{{array}} with named parameters', () => {
       let { errors } = templateToTypescript('<Foo @attr={{testArray 123 foo="bar"}} />', {
-        typesModule: '@glint/template',
+        typesModule: '@norith/glint-template',
         specialForms: { testArray: 'array-literal' },
       });
 
@@ -1373,7 +1373,7 @@ describe('Transform: rewriteTemplate', () => {
 
     test('{{eq}} with named parameters', () => {
       let { errors } = templateToTypescript('<Foo @attr={{testEq 123 foo="bar"}} />', {
-        typesModule: '@glint/template',
+        typesModule: '@norith/glint-template',
         specialForms: { testEq: '===' },
       });
 
@@ -1387,7 +1387,7 @@ describe('Transform: rewriteTemplate', () => {
 
     test('{{eq}} with wrong number of parameters', () => {
       let { errors } = templateToTypescript('<Foo @attr={{testEq 123 456 789}} />', {
-        typesModule: '@glint/template',
+        typesModule: '@norith/glint-template',
         specialForms: { testEq: '===' },
       });
 
@@ -1401,7 +1401,7 @@ describe('Transform: rewriteTemplate', () => {
 
     test('{{neq}} with named parameters', () => {
       let { errors } = templateToTypescript('<Foo @attr={{testNeq 123 foo="bar"}} />', {
-        typesModule: '@glint/template',
+        typesModule: '@norith/glint-template',
         specialForms: { testNeq: '!==' },
       });
 
@@ -1415,7 +1415,7 @@ describe('Transform: rewriteTemplate', () => {
 
     test('{{neq}} with wrong number of parameters', () => {
       let { errors } = templateToTypescript('<Foo @attr={{testNeq 123 456 789}} />', {
-        typesModule: '@glint/template',
+        typesModule: '@norith/glint-template',
         specialForms: { testNeq: '!==' },
       });
 
@@ -1429,7 +1429,7 @@ describe('Transform: rewriteTemplate', () => {
 
     test('{{and}} with named parameters', () => {
       let { errors } = templateToTypescript('<Foo @attr={{testAnd 123 456 foo="bar"}} />', {
-        typesModule: '@glint/template',
+        typesModule: '@norith/glint-template',
         specialForms: { testAnd: '&&' },
       });
 
@@ -1443,7 +1443,7 @@ describe('Transform: rewriteTemplate', () => {
 
     test('{{and}} with wrong number of parameters', () => {
       let { errors } = templateToTypescript('<Foo @attr={{testAnd 123}} />', {
-        typesModule: '@glint/template',
+        typesModule: '@norith/glint-template',
         specialForms: { testAnd: '&&' },
       });
 
@@ -1457,7 +1457,7 @@ describe('Transform: rewriteTemplate', () => {
 
     test('{{or}} with named parameters', () => {
       let { errors } = templateToTypescript('<Foo @attr={{testOr 123 456 foo="bar"}} />', {
-        typesModule: '@glint/template',
+        typesModule: '@norith/glint-template',
         specialForms: { testOr: '||' },
       });
 
@@ -1471,7 +1471,7 @@ describe('Transform: rewriteTemplate', () => {
 
     test('{{or}} with wrong number of parameters', () => {
       let { errors } = templateToTypescript('<Foo @attr={{testOr 123}} />', {
-        typesModule: '@glint/template',
+        typesModule: '@norith/glint-template',
         specialForms: { testOr: '||' },
       });
 
@@ -1485,7 +1485,7 @@ describe('Transform: rewriteTemplate', () => {
 
     test('{{not}} with named parameters', () => {
       let { errors } = templateToTypescript('<Foo @attr={{testNot 123 foo="bar"}} />', {
-        typesModule: '@glint/template',
+        typesModule: '@norith/glint-template',
         specialForms: { testNot: '!' },
       });
 
@@ -1499,7 +1499,7 @@ describe('Transform: rewriteTemplate', () => {
 
     test('{{not}} with wrong number of parameters', () => {
       let { errors } = templateToTypescript('<Foo @attr={{testNot 123 456}} />', {
-        typesModule: '@glint/template',
+        typesModule: '@norith/glint-template',
         specialForms: { testNot: '!' },
       });
 
@@ -1513,7 +1513,7 @@ describe('Transform: rewriteTemplate', () => {
 
     test('inline {{if}} with no consequent', () => {
       let { errors } = templateToTypescript('<Foo @attr={{testIf true}} />', {
-        typesModule: '@glint/template',
+        typesModule: '@norith/glint-template',
         specialForms: { testIf: 'if' },
       });
 
@@ -1532,7 +1532,7 @@ describe('Transform: rewriteTemplate', () => {
             hello!
           {{/testIf}}
         `,
-        { typesModule: '@glint/template', specialForms: { testIf: 'if' } }
+        { typesModule: '@norith/glint-template', specialForms: { testIf: 'if' } }
       );
 
       expect(errors).toEqual([
@@ -1557,7 +1557,7 @@ describe('Transform: rewriteTemplate', () => {
           </Component>
           Footer content
         `,
-        { typesModule: '@glint/template' }
+        { typesModule: '@norith/glint-template' }
       );
 
       expect(errors).toEqual([
@@ -1581,7 +1581,7 @@ describe('Transform: rewriteTemplate', () => {
             {{foo-bar}}
           </Component>
         `,
-        { typesModule: '@glint/template' }
+        { typesModule: '@norith/glint-template' }
       );
 
       expect(errors).toEqual([

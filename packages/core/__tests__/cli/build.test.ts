@@ -28,7 +28,7 @@ describe('CLI: single-pass build mode typechecking', () => {
 
     test('passes a valid basic project', async () => {
       let code = stripIndent`
-        import '@glint/environment-ember-template-imports';
+        import '@norith/glint-environment-ember-template-imports';
         import Component from '@glimmer/component';
 
         type ApplicationArgs = {
@@ -56,7 +56,7 @@ describe('CLI: single-pass build mode typechecking', () => {
 
     test('rejects a basic project with a template syntax error', async () => {
       let code = stripIndent`
-        import '@glint/environment-ember-template-imports';
+        import '@norith/glint-environment-ember-template-imports';
         import Component from '@glimmer/component';
 
         type ApplicationArgs = {
@@ -97,7 +97,7 @@ describe('CLI: single-pass build mode typechecking', () => {
 
     test('rejects a basic project with a template type error', async () => {
       let code = stripIndent`
-        import '@glint/environment-ember-template-imports';
+        import '@norith/glint-environment-ember-template-imports';
         import Component from '@glimmer/component';
 
         type ApplicationArgs = {
@@ -1075,7 +1075,7 @@ describe('CLI: --build --clean', () => {
     let project = await Project.createExact(BASE_TS_CONFIG);
 
     let code = stripIndent`
-      import '@glint/environment-ember-template-imports';
+      import '@norith/glint-environment-ember-template-imports';
       import Component from '@glimmer/component';
 
       type ApplicationArgs = {
@@ -1169,7 +1169,7 @@ describe('CLI: --build --force', () => {
     let project = await Project.createExact(BASE_TS_CONFIG);
 
     let code = stripIndent`
-      import '@glint/environment-ember-template-imports';
+      import '@norith/glint-environment-ember-template-imports';
       import Component from '@glimmer/component';
 
       type ApplicationArgs = {
@@ -1283,7 +1283,7 @@ describe('CLI: --build --dry', () => {
       project = await Project.createExact(BASE_TS_CONFIG);
 
       let code = stripIndent`
-        import '@glint/environment-ember-template-imports';
+        import '@norith/glint-environment-ember-template-imports';
         import Component from '@glimmer/component';
 
         type ApplicationArgs = {
@@ -1328,7 +1328,7 @@ describe('CLI: --build --dry', () => {
 
       test('when there are changes', async () => {
         let code = stripIndent`
-          import '@glint/environment-ember-template-imports';
+          import '@norith/glint-environment-ember-template-imports';
           import Component from '@glimmer/component';
 
           type ApplicationArgs = {
@@ -1366,7 +1366,7 @@ describe('CLI: --build --dry', () => {
       });
 
       let backingClass = stripIndent`
-        import '@glint/environment-ember-template-imports';
+        import '@norith/glint-environment-ember-template-imports';
         import Component from '@glimmer/component';
 
         type ApplicationArgs = {
@@ -1412,7 +1412,7 @@ describe('CLI: --build --dry', () => {
 
       test('when there are changes to the `.ts` file', async () => {
         let backingClass = stripIndent`
-          import '@glint/environment-ember-template-imports';
+          import '@norith/glint-environment-ember-template-imports';
           import Component from '@glimmer/component';
 
           type ApplicationArgs = {

@@ -1,5 +1,5 @@
-import { ComponentLike } from '@glint/template';
-import { ComponentReturn, DirectInvokable, NamedArgs } from '@glint/template/-private/integration';
+import { ComponentLike } from '@norith/glint-template';
+import { ComponentReturn, DirectInvokable, NamedArgs } from '@norith/glint-template/-private/integration';
 
 type RequireAtLeastOne<T, Keys extends keyof T = keyof T> = Pick<T, Exclude<keyof T, Keys>> &
   {

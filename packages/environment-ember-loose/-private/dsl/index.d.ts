@@ -1,16 +1,16 @@
 import './integration-declarations';
 
-import { ResolveOrReturn } from '@glint/template/-private/dsl';
+import { ResolveOrReturn } from '@norith/glint-template/-private/dsl';
 import {
   DirectInvokable,
   Invokable,
   InvokableInstance,
   Invoke,
   InvokeDirect,
-} from '@glint/template/-private/integration';
+} from '@norith/glint-template/-private/integration';
 import { Globals } from './globals';
 
-export * from '@glint/template/-private/dsl';
+export * from '@norith/glint-template/-private/dsl';
 export { Globals };
 
 // Items that can be directly invoked by value

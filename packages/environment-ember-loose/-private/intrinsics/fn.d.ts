@@ -1,4 +1,4 @@
-import { DirectInvokable } from '@glint/template/-private/integration';
+import { DirectInvokable } from '@norith/glint-template/-private/integration';
 import { Mut } from './mut';
 
 export type FnHelper = DirectInvokable<{

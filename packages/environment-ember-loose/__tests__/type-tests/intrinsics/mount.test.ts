@@ -1,5 +1,5 @@
 import { expectTypeOf } from 'expect-type';
-import { Globals, NamedArgsMarker, resolve } from '@glint/environment-ember-loose/-private/dsl';
+import { Globals, NamedArgsMarker, resolve } from '@norith/glint-environment-ember-loose/-private/dsl';
 
 let mount = resolve(Globals['mount']);
 

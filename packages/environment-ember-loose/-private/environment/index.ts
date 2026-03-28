@@ -3,7 +3,7 @@ import {
   GlintSpecialForm,
   GlintSpecialFormConfig,
   PathCandidate,
-} from '@glint/core/config-types';
+} from '@norith/glint-core/config-types';
 
 const REGEXES = {
   JS_SCRIPT_EXT: /\.js$/,
@@ -19,7 +19,7 @@ const REGEXES = {
 export default function emberLooseEnvironment(
   options: Record<string, unknown>
 ): GlintEnvironmentConfig {
-  let typesModule = '@glint/environment-ember-loose/-private/dsl';
+  let typesModule = '@norith/glint-environment-ember-loose/-private/dsl';
   let additionalSpecialForms =
     typeof options['additionalSpecialForms'] === 'object'
       ? (options['additionalSpecialForms'] as GlintSpecialFormConfig)

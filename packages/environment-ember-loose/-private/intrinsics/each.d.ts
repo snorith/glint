@@ -1,5 +1,5 @@
 import EmberArray from '@ember/array';
-import { ComponentLike } from '@glint/template';
+import { ComponentLike } from '@norith/glint-template';
 
 type ArrayLike<T> = ReadonlyArray<T> | Iterable<T> | EmberArray<T>;
 

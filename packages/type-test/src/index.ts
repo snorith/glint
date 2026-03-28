@@ -1,4 +1,4 @@
-import { DirectInvokable, HasContext } from '@glint/template/-private/integration';
+import { DirectInvokable, HasContext } from '@norith/glint-template/-private/integration';
 import { Equal, Extends, IsAny, IsNever, IsUnknown } from 'expect-type';
 
 // We use these two interfaces as a way of faking HKTs. Through the `Expectation`
