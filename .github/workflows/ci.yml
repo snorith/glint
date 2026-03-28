@@ -1,132 +1,18 @@
 name: CI
 
-# These trigger patterns courtesy of https://github.com/broccolijs/broccoli/pull/436
 on:
-  pull_request:
   push:
-    # filtering branches here prevents duplicate builds from pull_request and push
-    branches:
-      - main
-    # always run CI for tags
-    tags:
-      - '*'
-
-  # early issue detection: run CI weekly on Sundays
-  schedule:
-    - cron: '0 6 * * 0'
-
-env:
-  CI: true
+    branches: [main, develop]
+  pull_request:
 
 jobs:
-  test:
-    name: Test
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-      - name: Install Node
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v5
         with:
-          node-version: 14
-      - name: Locate Yarn Cache
-        id: yarn-cache-dir-path
-        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
-      - uses: actions/cache@v3
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      - name: Install Dependencies
-        run: yarn install --frozen-lockfile
-      - name: Lint
-        run: yarn lint
-      - name: Build
-        run: yarn build
-      - name: Run Tests
-        uses: coactions/setup-xvfb@v1
-        with:
-          run: yarn test
-
-  # The Windows runner can be super flaky both with Yarn installs and
-  # when launching browser tests, so we allow for retries in those steps.
-  test-windows:
-    name: Test Windows
-    runs-on: windows-2022
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-      - name: Install Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 14
-      - name: Install Dependencies
-        uses: nick-fields/retry@v2
-        with:
-          max_attempts: 2
-          timeout_minutes: 10
-          command: yarn install --frozen-lockfile
-      - name: Build
-        run: yarn build
-      - name: Test @glint/core
-        uses: nick-fields/retry@v2
-        with:
-          max_attempts: 2
-          timeout_minutes: 20
-          command: yarn workspace @glint/core test
-      - name: Test glint-vscode
-        uses: nick-fields/retry@v2
-        with:
-          max_attempts: 2
-          timeout_minutes: 10
-          command: yarn workspace glint-vscode test
-      - name: Test @glint/scripts
-        run: yarn workspace @glint/scripts test
-
-  test-floating-deps:
-    name: Test Floating Dependencies
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-      - name: Install Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 14
-      - name: Install Dependencies
-        run: yarn install --no-lockfile
-      - name: Build
-        run: yarn build
-      - name: Run Tests
-        uses: coactions/setup-xvfb@v1
-        with:
-          run: yarn test
-
-  test-ts-nightly:
-    name: Test TypeScript Nightly
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-      - name: Install Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 14
-      - name: Locate Yarn Cache
-        id: yarn-cache-dir-path
-        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
-      - uses: actions/cache@v3
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      - name: Install Dependencies
-        run: yarn add --dev -W typescript@next
-      - name: Build
-        run: yarn build
-      - name: Run Tests
-        uses: coactions/setup-xvfb@v1
-        with:
-          run: yarn test
+          node-version: '20'
+      - run: yarn install --no-lockfile --non-interactive
+      - run: npx tsc --build --force

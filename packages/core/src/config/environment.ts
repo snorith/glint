@@ -11,7 +11,7 @@ import {
   PathCandidate,
   PathCandidateWithDeferral,
   SourceKind,
-} from '@norith/glint-core/config-types';
+} from './types.cjs';
 
 const require = createRequire(import.meta.url);
 
@@ -241,7 +241,9 @@ function locateEnvironment(name: string, basedir: string): string {
   let require = createRequire(path.resolve(basedir, 'package.json'));
 
   for (let candidate of [
-    // 1st-party package name shorthand
+    // @norith fork package name shorthand
+    `@norith/glint-environment-${name}/glint-environment-definition`,
+    // Original 1st-party package name shorthand
     `@glint/environment-${name}/glint-environment-definition`,
     // 3rd-party package name shorthand
     `glint-environment-${name}/glint-environment-definition`,
