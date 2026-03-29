@@ -1,6 +1,6 @@
 {
   "name": "glint",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TypeScript-powered template type checking for Glimmer (maintained fork)",
   "repository": "https://github.com/snorith/glint",
   "private": true,
@@ -41,6 +41,5 @@
     "@types/glob": "7.2.0",
     "minipass": "5.0.0",
     "ember-cli-htmlbars": "^6.0.1"
-  },
-  "version": "1.0.0"
+  }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@norith/glint-core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": "https://github.com/snorith/glint",
   "description": "A CLI for performing typechecking on Glimmer templates",
   "license": "MIT",
