@@ -36,6 +36,7 @@ export default function glimmerxEnvironment(
   return {
     tags: {
       '@glimmerx/component': { hbs: tagConfig },
+      '@norith/glimmerx-component': { hbs: tagConfig },
     },
   };
 }

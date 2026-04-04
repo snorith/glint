@@ -211,7 +211,7 @@ describe('Language Server: Diagnostic Augmentation', () => {
       [
         {
           "code": 2322,
-          "message": "Only primitive values (see \`AttrValue\` in \`@norith/glint-template\`) are assignable as HTML attributes. If you want to set an event listener, consider using the \`{{on}}\` modifier instead.
+          "message": "Only primitive values (see \`AttrValue\` in \`@glint/template\`) are assignable as HTML attributes. If you want to set an event listener, consider using the \`{{on}}\` modifier instead.
         Type '{}' is not assignable to type 'AttrValue'.",
           "range": {
             "end": {
@@ -229,7 +229,7 @@ describe('Language Server: Diagnostic Augmentation', () => {
         },
         {
           "code": 2345,
-          "message": "Only primitive values and certain DOM objects (see \`ContentValue\` in \`@norith/glint-template\`) are usable as top-level template content.
+          "message": "Only primitive values and certain DOM objects (see \`ContentValue\` in \`@glint/template\`) are usable as top-level template content.
         Argument of type '{}' is not assignable to parameter of type 'ContentValue'.",
           "range": {
             "end": {
@@ -247,7 +247,7 @@ describe('Language Server: Diagnostic Augmentation', () => {
         },
         {
           "code": 2345,
-          "message": "Only primitive values and certain DOM objects (see \`ContentValue\` in \`@norith/glint-template\`) are usable as top-level template content.
+          "message": "Only primitive values and certain DOM objects (see \`ContentValue\` in \`@glint/template\`) are usable as top-level template content.
         Argument of type '{}' is not assignable to parameter of type 'ContentValue'.",
           "range": {
             "end": {
@@ -265,7 +265,7 @@ describe('Language Server: Diagnostic Augmentation', () => {
         },
         {
           "code": 2345,
-          "message": "Only primitive values and certain DOM objects (see \`ContentValue\` in \`@norith/glint-template\`) are usable as top-level template content.
+          "message": "Only primitive values and certain DOM objects (see \`ContentValue\` in \`@glint/template\`) are usable as top-level template content.
         Argument of type '{}' is not assignable to parameter of type 'ContentValue'.",
           "range": {
             "end": {
@@ -283,7 +283,7 @@ describe('Language Server: Diagnostic Augmentation', () => {
         },
         {
           "code": 2322,
-          "message": "Only primitive values (see \`AttrValue\` in \`@norith/glint-template\`) are assignable as HTML attributes. If you want to set an event listener, consider using the \`{{on}}\` modifier instead.
+          "message": "Only primitive values (see \`AttrValue\` in \`@glint/template\`) are assignable as HTML attributes. If you want to set an event listener, consider using the \`{{on}}\` modifier instead.
         Type '{}' is not assignable to type 'AttrValue'.",
           "range": {
             "end": {
@@ -301,7 +301,7 @@ describe('Language Server: Diagnostic Augmentation', () => {
         },
         {
           "code": 2345,
-          "message": "Only primitive values and certain DOM objects (see \`ContentValue\` in \`@norith/glint-template\`) are usable as top-level template content.
+          "message": "Only primitive values and certain DOM objects (see \`ContentValue\` in \`@glint/template\`) are usable as top-level template content.
         Argument of type '{}' is not assignable to parameter of type 'ContentValue'.",
           "range": {
             "end": {
@@ -319,7 +319,7 @@ describe('Language Server: Diagnostic Augmentation', () => {
         },
         {
           "code": 2345,
-          "message": "Only primitive values and certain DOM objects (see \`ContentValue\` in \`@norith/glint-template\`) are usable as top-level template content.
+          "message": "Only primitive values and certain DOM objects (see \`ContentValue\` in \`@glint/template\`) are usable as top-level template content.
         Argument of type '{}' is not assignable to parameter of type 'ContentValue'.",
           "range": {
             "end": {
@@ -337,7 +337,7 @@ describe('Language Server: Diagnostic Augmentation', () => {
         },
         {
           "code": 2345,
-          "message": "Only primitive values and certain DOM objects (see \`ContentValue\` in \`@norith/glint-template\`) are usable as top-level template content.
+          "message": "Only primitive values and certain DOM objects (see \`ContentValue\` in \`@glint/template\`) are usable as top-level template content.
         Argument of type '{}' is not assignable to parameter of type 'ContentValue'.",
           "range": {
             "end": {

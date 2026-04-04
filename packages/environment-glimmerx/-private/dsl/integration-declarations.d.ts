@@ -12,6 +12,7 @@ import {
 // Components
 
 import '@glimmerx/component';
+import '@norith/glimmerx-component';
 
 // Declaring that `hbs` returns a `TemplateComponent` prevents vanilla `tsc` from freaking out when
 // it sees code like `const MyThing: TC<Sig> = hbs...`. Glint itself will never see `hbs` get used, as
@@ -33,10 +34,21 @@ declare module '@glimmerx/component' {
   }
 }
 
+declare module '@norith/glimmerx-component' {
+  export default interface Component<S> extends InstanceType<ComponentLike<S>> {
+    [Context]: ComponentContext<this, S>;
+  }
+
+  export interface TemplateComponentInstance<S> extends InstanceType<ComponentLike<S>> {
+    [Context]: ComponentContext<null, S>;
+  }
+}
+
 //////////////////////////////////////////////////////////////////////
 // Helpers
 
 import '@glimmerx/helper';
+import '@norith/glimmerx-helper';
 
 type _FnHelper = DirectInvokable<{
   <Ret, Args extends unknown[]>(f: (...rest: Args) => Ret): (...rest: Args) => Ret;
@@ -84,10 +96,19 @@ declare module '@glimmerx/helper' {
   export interface FnHelper extends _FnHelper {}
 }
 
+declare module '@norith/glimmerx-helper/dist/commonjs/src/helper' {
+  export interface HelperInstance<S> extends InstanceType<HelperLike<S>> {}
+}
+
+declare module '@norith/glimmerx-helper' {
+  export interface FnHelper extends _FnHelper {}
+}
+
 //////////////////////////////////////////////////////////////////////
 // Modifiers
 
 import '@glimmerx/modifier';
+import '@norith/glimmerx-modifier';
 import {
   ComponentSignatureArgs,
   ComponentSignatureBlocks,
@@ -115,5 +136,9 @@ type _OnModifier = abstract new <Name extends string>() => InstanceType<
 >;
 
 declare module '@glimmerx/modifier' {
+  export interface OnModifier extends _OnModifier {}
+}
+
+declare module '@norith/glimmerx-modifier' {
   export interface OnModifier extends _OnModifier {}
 }

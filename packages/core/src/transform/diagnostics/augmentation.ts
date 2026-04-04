@@ -55,7 +55,7 @@ function checkAssignabilityError(
     // or `...attributes`, then it's an HTML attribute type issue.
     return addGlintDetails(
       message,
-      'Only primitive values (see `AttrValue` in `@glint/template`) are assignable as HTML attributes. ' +
+      'Only primitive values (see `AttrValue` in `@norith/glint-template`) are assignable as HTML attributes. ' +
         'If you want to set an event listener, consider using the `{{on}}` modifier instead.'
     );
   } else if (
